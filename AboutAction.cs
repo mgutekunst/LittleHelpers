@@ -2,9 +2,9 @@
 using JetBrains.ActionManagement;
 using JetBrains.Application.DataContext;
 
-namespace ResharperPlugins
+namespace LittleHelpers
 {
-    [ActionHandler("ResharperPlugins.About")]
+    [ActionHandler("LittleHelpers.About")]
     public class AboutAction : IActionHandler
     {
         public bool Update(IDataContext context, ActionPresentation presentation, DelegateUpdate nextUpdate)
@@ -16,8 +16,8 @@ namespace ResharperPlugins
         public void Execute(IDataContext context, DelegateExecute nextExecute)
         {
             MessageBox.Show(
-              "ResharperPlugins\nAcme Corp.\n\n",
-              "About ResharperPlugins",
+              "LittleHelpers\nAcme Corp.\n\n",
+              "About LittleHelpers",
               MessageBoxButtons.OK,
               MessageBoxIcon.Information);
         }

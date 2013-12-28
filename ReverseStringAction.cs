@@ -11,7 +11,7 @@ using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.TextControl;
 using JetBrains.Util;
 
-namespace ResharperPlugins
+namespace LittleHelpers
 {
     /// <summary>
     /// This is an example context action. The test project demonstrates tests for

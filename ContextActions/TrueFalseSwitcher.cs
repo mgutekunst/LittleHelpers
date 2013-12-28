@@ -4,18 +4,15 @@ using JetBrains.Application.Progress;
 using JetBrains.ProjectModel;
 using JetBrains.ReSharper.Feature.Services.Bulbs;
 using JetBrains.ReSharper.Feature.Services.CSharp.Bulbs;
-using JetBrains.ReSharper.Feature.Services.LinqTools;
 using JetBrains.ReSharper.Intentions.Extensibility;
 using JetBrains.ReSharper.Intentions.Extensibility.Menu;
-using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Impl.Tree;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.TextControl;
 using JetBrains.Util;
 
-namespace ResharperPlugins.Context_Actions
+namespace LittleHelpers.Context_Actions
 {
 
     [ContextAction(Description = "Switches true to false and vice versa",

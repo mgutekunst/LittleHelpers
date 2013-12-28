@@ -1,6 +1,6 @@
 obj/*
 bin/*
-packages/*
+#packages/*
 *.nupkg
 /ResharperPlugins.csproj.user
 /ResharperPlugins.v12.suo

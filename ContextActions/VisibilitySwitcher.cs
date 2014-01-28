@@ -89,23 +89,59 @@ namespace LittleHelpers.ContextActions
 
         protected override Action<ITextControl> ExecutePsiTransaction(ISolution solution, IProgressIndicator progress)
         {
-            var assignment = _provider.GetSelectedElement<IAssignmentExpression>(true, true);
-            if (assignment != null)
+            //            var assignment = _provider.GetSelectedElement<IAssignmentExpression>(true, true);
+            //            if (assignment != null)
+            //            {
+            //                var factory = CSharpElementFactory.GetInstance(_provider.PsiModule);
+            //                ICSharpExpression exp;
+            //
+            //                if(assignment.Source.GetText().EndsWith("Visible"))
+            //                {
+            //                    exp = factory.CreateExpressionAsIs("Visibility.Collapsed");
+            //                }
+            //                else
+            //                {
+            //                    exp = factory.CreateExpressionAsIs("Visibility.Visible");
+            //                }
+            //
+            //                assignment.SetSource(exp);
+            //            }
+            //            else
+            //            {
+            //                var ifstatement = _provider.GetSelectedElement<IIfStatement>(true, true);
+            //                if(ifstatement != null)
+            //                {
+            //                    var tt = _provider.GetSelectedElement<IReferenceExpression>(true, true);
+            //                }
+            //            }
+
+            var refExp = _provider.GetSelectedElement<IReferenceExpression>(true, true);
+
+            ICSharpExpression exp = null;
+            if (refExp != null)
             {
                 var factory = CSharpElementFactory.GetInstance(_provider.PsiModule);
-                ICSharpExpression exp;
 
-                if(assignment.Source.GetText().EndsWith("Visible"))
-                {
-                    exp = factory.CreateExpressionAsIs("Visibility.Collapsed");
-                }
-                else
-                {
-                    exp = factory.CreateExpressionAsIs("Visibility.Visible");
-                }
+                var node = refExp.NameIdentifier.Name == "Visibility" ? refExp.Parent : refExp;
 
-                assignment.SetSource(exp);
+                refExp = node as IReferenceExpression;
+                if (refExp != null)
+                {
+                    if (refExp.NameIdentifier.Name == "Visible")
+                    {
+                        exp = factory.CreateExpressionAsIs("Visibility.Collapsed");
+                    }
+                    else if (refExp.NameIdentifier.Name == "Collapsed")
+                    {
+                        exp = factory.CreateExpressionAsIs("Visibility.Visible");
+                    }
+                    if (exp != null)
+                    {
+                        refExp.ReplaceBy(exp);
+                    }
+                }
             }
+
             return null;
         }
 

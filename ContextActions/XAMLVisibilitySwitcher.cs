@@ -8,13 +8,16 @@ using JetBrains.ReSharper.Feature.Services.CSharp.Bulbs;
 using JetBrains.ReSharper.Feature.Services.Html;
 using JetBrains.ReSharper.Feature.Services.LinqTools;
 using JetBrains.ReSharper.Feature.Services.Xaml.Bulbs;
+using JetBrains.ReSharper.Feature.Services.Xml.Bulbs;
 using JetBrains.ReSharper.Intentions.Extensibility;
 using JetBrains.ReSharper.Intentions.Extensibility.Menu;
+using JetBrains.ReSharper.Intentions.Xml.ContextActions;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.ExtensionsAPI.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.ReSharper.Psi.Xaml.Impl;
+using JetBrains.ReSharper.Psi.Xaml.Impl.Util;
 using JetBrains.ReSharper.Psi.Xaml.Tree;
 using JetBrains.ReSharper.Psi.Xml.Impl.Tree;
 using JetBrains.ReSharper.Psi.Xml.Parsing;
@@ -28,15 +31,15 @@ namespace LittleHelpers.ContextActions
       Group = "XAML",
       Name = "XAMLVisibilitySwitcher")]
     public sealed class XAMLVisibilitySwitcher : IContextAction
-    {
-        private readonly XamlContextActionDataProvider _provider;
+    {   
+        private readonly XmlContextActionDataProvider _provider;
         private IBulbAction[] _items;
 
         /// <summary>
         /// For languages other than C# any inheritor of <see cref="IContextActionDataProvider"/> can 
         /// be injected in this constructor.
         /// </summary>
-        public XAMLVisibilitySwitcher(XamlContextActionDataProvider provider)
+        public XAMLVisibilitySwitcher(XmlContextActionDataProvider provider)
         {
             _provider = provider;
         }
@@ -49,11 +52,16 @@ namespace LittleHelpers.ContextActions
 
         public bool IsAvailable(IUserDataHolder cache)
         {
-            var field = _provider.GetSelectedElement<XmlTagHeaderNode>(true, true);
+            var field = _provider.GetSelectedElement<IPropertyAttribute>(true, true);
             if(field != null)
             {
-                var vis = field.Attributes.FirstOrDefault(a => a.AttributeName == "Visibility");
-                return vis != null;
+                if(field.PropertyName == "Visibility")
+                {
+                    var text = field.Value.GetText();
+                    return text.Contains("Visible") || text.Contains("Collapsed");
+                }
+//                var vis = field.Attributes.FirstOrDefault(a => a.AttributeName == "Visibility");
+//                return vis != null;
             }
 
             return false;
@@ -77,9 +85,9 @@ namespace LittleHelpers.ContextActions
 
     public class XamlBulbItem : BulbActionBase
     {
-        private readonly XamlContextActionDataProvider _provider;
+        private readonly XmlContextActionDataProvider _provider;
 
-        public XamlBulbItem(XamlContextActionDataProvider provider)
+        public XamlBulbItem(XmlContextActionDataProvider provider)
         {
             _provider = provider;
         }
@@ -95,22 +103,18 @@ namespace LittleHelpers.ContextActions
 
         protected override Action<ITextControl> ExecutePsiTransaction(ISolution solution, IProgressIndicator progress)
         {
-            var field = _provider.GetSelectedElement<XmlTagHeaderNode>(true, true);
+            var field = _provider.GetSelectedElement<IPropertyAttribute>(true, true);
             if (field != null)
             {
                 var factory = XamlElementFactory.GetInstance(_provider.PsiModule);
                 IXmlAttribute vis;
-                vis = field.Attributes.FirstOrDefault(a => a.AttributeName == "Visibility");
-
-                if (vis != null)
+                if(field.Value.GetText().Contains("Visible"))
                 {
-                    if (vis.UnquotedValue == "Visible")
-                    {
-                    }
-                    else if(vis.UnquotedValue == "Collapsed")
-                    {
-                        field.SetDynamicFieldOrProperty("Visibility", "Visible");
-                    }
+                    field.SetStringValue("Collapsed");
+                    
+                } else if (field.GetText().Contains("Collapsed"))
+                {
+                    field.SetStringValue("Visible");
                 }
             }
 

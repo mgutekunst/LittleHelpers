@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Windows;
 using JetBrains.Application.Progress;
 using JetBrains.ProjectModel;
 using JetBrains.ReSharper.Feature.Services.Bulbs;
@@ -61,7 +60,7 @@ namespace LittleHelpers.ContextActions
                 {
                     _items = new IBulbAction[]
                    {
-                     new MyBulbItem(_provider)
+                     new VisibilityBulbItem(_provider)
                    };
                 }
                 return _items;
@@ -69,11 +68,11 @@ namespace LittleHelpers.ContextActions
         }
     }
 
-    public class MyBulbItem : BulbActionBase
+    public class VisibilityBulbItem : BulbActionBase
     {
         private readonly ICSharpContextActionDataProvider _provider;
 
-        public MyBulbItem(ICSharpContextActionDataProvider provider)
+        public VisibilityBulbItem(ICSharpContextActionDataProvider provider)
         {
             _provider = provider;
         }
@@ -89,32 +88,6 @@ namespace LittleHelpers.ContextActions
 
         protected override Action<ITextControl> ExecutePsiTransaction(ISolution solution, IProgressIndicator progress)
         {
-            //            var assignment = _provider.GetSelectedElement<IAssignmentExpression>(true, true);
-            //            if (assignment != null)
-            //            {
-            //                var factory = CSharpElementFactory.GetInstance(_provider.PsiModule);
-            //                ICSharpExpression exp;
-            //
-            //                if(assignment.Source.GetText().EndsWith("Visible"))
-            //                {
-            //                    exp = factory.CreateExpressionAsIs("Visibility.Collapsed");
-            //                }
-            //                else
-            //                {
-            //                    exp = factory.CreateExpressionAsIs("Visibility.Visible");
-            //                }
-            //
-            //                assignment.SetSource(exp);
-            //            }
-            //            else
-            //            {
-            //                var ifstatement = _provider.GetSelectedElement<IIfStatement>(true, true);
-            //                if(ifstatement != null)
-            //                {
-            //                    var tt = _provider.GetSelectedElement<IReferenceExpression>(true, true);
-            //                }
-            //            }
-
             var refExp = _provider.GetSelectedElement<IReferenceExpression>(true, true);
 
             ICSharpExpression exp = null;

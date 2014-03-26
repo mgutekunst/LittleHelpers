@@ -6,11 +6,11 @@ using JetBrains.Application.PluginSupport;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("LittleHelpers")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Small Helpers to ease the the life of a programmer")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Acme Corp.")]
+[assembly: AssemblyCompany("Manuel Gutekunst")]
 [assembly: AssemblyProduct("LittleHelpers")]
-[assembly: AssemblyCopyright("Copyright © Acme Corp., 2013")]
+[assembly: AssemblyCopyright("Copyright © Manuel Gutekunst, 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,6 +20,6 @@ using JetBrains.Application.PluginSupport;
 [assembly: ActionsXml("LittleHelpers.Actions.xml")]
 
 // The following information is displayed by ReSharper in the Plugins dialog
-[assembly: PluginTitle("LittleHelpers")]
-[assembly: PluginDescription("Contains small helper to make the VS life easier.")]
-[assembly: PluginVendor("Acme Corp.")]
+[assembly: PluginTitle("Little Helpers")]
+[assembly: PluginDescription("Small Helpers to ease the the life of a programmer")]
+[assembly: PluginVendor("Manuel Gutekunst")]

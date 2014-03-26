@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <actions>
-  <insert group-id="LittleHelpers" position="last">
+  <insert group-id="ReSharper" position="last">
     <action-group id="LittleHelpers" text="LittleHelpers">
-      <action id="LittleHelpers.About" text="About LittleHelpers"/>
+      <action id="LittleHelpers.About" text="About Little Helpers"/>
       <!-- to break up elements use <separator/> -->
     </action-group>
   </insert>

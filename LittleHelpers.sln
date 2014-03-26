@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleHelpers", "LittleHelpers.csproj", "{3A7F52AF-31FC-44FC-83DD-6B2597137E1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleHelpers", "LittleHelpers.csproj", "{C82998ED-7947-4A5C-A63A-5B67E8A5F510}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,11 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3A7F52AF-31FC-44FC-83DD-6B2597137E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A7F52AF-31FC-44FC-83DD-6B2597137E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A7F52AF-31FC-44FC-83DD-6B2597137E1D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{3A7F52AF-31FC-44FC-83DD-6B2597137E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A7F52AF-31FC-44FC-83DD-6B2597137E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82998ED-7947-4A5C-A63A-5B67E8A5F510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82998ED-7947-4A5C-A63A-5B67E8A5F510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82998ED-7947-4A5C-A63A-5B67E8A5F510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82998ED-7947-4A5C-A63A-5B67E8A5F510}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

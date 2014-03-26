@@ -12,12 +12,11 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.TextControl;
 using JetBrains.Util;
 
-namespace LittleHelpers.Context_Actions
+namespace LittleHelpers.ContextActions
 {
-
     [ContextAction(Description = "Switches true to false and vice versa",
-      Group = "C#",
-      Name = "TrueFalseSwitcher")]
+   Group = "C#",
+   Name = "TrueFalseSwitcher")]
     public sealed class TrueFalseSwitcher : IContextAction
     {
         private readonly ICSharpContextActionDataProvider _provider;
@@ -48,7 +47,7 @@ namespace LittleHelpers.Context_Actions
                 if (token == TokenType.TRUE_KEYWORD || token == TokenType.FALSE_KEYWORD)
                     return true;
             }
-                return false;
+            return false;
         }
 
         private IBulbAction[] Items
@@ -59,7 +58,7 @@ namespace LittleHelpers.Context_Actions
                 {
                     _items = new IBulbAction[]
                    {
-                     new MyBulbItem(_provider)
+                     new TrueFalseBulbItem(_provider), 
                    };
                 }
                 return _items;
@@ -67,11 +66,11 @@ namespace LittleHelpers.Context_Actions
         }
     }
 
-    public class MyBulbItem : BulbActionBase
+    public class TrueFalseBulbItem : BulbActionBase
     {
         private readonly ICSharpContextActionDataProvider _provider;
 
-        public MyBulbItem(ICSharpContextActionDataProvider provider)
+        public TrueFalseBulbItem(ICSharpContextActionDataProvider provider)
         {
             _provider = provider;
         }
@@ -90,20 +89,20 @@ namespace LittleHelpers.Context_Actions
             // put transacted steps here
             // use 'provider' field to get currently selected element
             var lit = _provider.GetSelectedElement<ICSharpLiteralExpression>(true, true);
-            if(lit != null)
+            if (lit != null)
             {
                 var factory = CSharpElementFactory.GetInstance(_provider.PsiModule);
 
                 ICSharpExpression newLit = null;
-                if(lit.Literal.GetTokenType() == TokenType.TRUE_KEYWORD)
+                if (lit.Literal.GetTokenType() == TokenType.TRUE_KEYWORD)
                 {
                     newLit = factory.CreateExpressionAsIs("false");
                 }
-                else if(lit.Literal.GetTokenType() == TokenType.FALSE_KEYWORD)
+                else if (lit.Literal.GetTokenType() == TokenType.FALSE_KEYWORD)
                 {
                     newLit = factory.CreateExpressionAsIs("true");
                 }
-                if(newLit != null)
+                if (newLit != null)
                     lit.ReplaceBy(newLit);
             }
             return null;

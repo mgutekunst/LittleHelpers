@@ -16,8 +16,8 @@ namespace LittleHelpers
         public void Execute(IDataContext context, DelegateExecute nextExecute)
         {
             MessageBox.Show(
-              "LittleHelpers\nAcme Corp.\n\n",
-              "About LittleHelpers",
+              "Little Helpers\nManuel Gutekunst\n\nSmall Helpers to ease the the life of a programmer",
+              "About Little Helpers",
               MessageBoxButtons.OK,
               MessageBoxIcon.Information);
         }

@@ -10,7 +10,7 @@
 *** Register and deregister EventHandler
     Register or deregister an EventHandler (+= <==> -=)
 ** Install
-   Download the .nupkg file. Then tell ReSharper where to find additional plugins. 
+   Download the .nupkg file from the releases tab. Then tell ReSharper where to find additional plugins. 
 ** Bugs/ Feature Requests
    If you find a bug or want to request another feature, just go to the issue
    section and create one.

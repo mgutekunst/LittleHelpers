@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>LittleHelpers</id>
-    <version>0.0.0.5</version>
+    <version>0.0.0.6</version>
     <title>Little Helpers</title>
     <authors>Manuel Gutekunst</authors>
     <owners>Manuel Gutekunst</owners>
@@ -11,7 +11,7 @@
     <!-- <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl> -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Little Helpers to improve the life with Visual Studio</description>
-    <releaseNotes>This is the first commit. Currently only contains a Context Action to switch true and false</releaseNotes>
+    <releaseNotes>We now support registering and deregistering EventHandlers</releaseNotes>
     <copyright>Copyright 2013</copyright>
     <tags>ContextActions</tags>
     <dependencies>

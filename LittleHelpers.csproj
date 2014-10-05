@@ -51,6 +51,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContextActions\EventRegisteringSwitcher.cs" />
     <Compile Include="ContextActions\TrueFalseSwitcher.cs" />
     <Compile Include="ContextActions\VisibilitySwitcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

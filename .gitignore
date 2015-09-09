@@ -5,3 +5,4 @@ packages/*
 *.nupkg
 *.user
 /*.suo
+/.vs/LittleHelpers/v14/.suo

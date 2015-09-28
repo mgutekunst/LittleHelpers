@@ -16,6 +16,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\LittleHelpers.RS9\bin\x86\Release\Little*" target="DotFiles" />
+    <file src="..\LittleHelpers.RS9\bin\Release\Little*" target="DotFiles" />
   </files>
 </package>

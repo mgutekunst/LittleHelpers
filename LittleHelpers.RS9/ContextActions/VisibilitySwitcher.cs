@@ -11,12 +11,12 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.TextControl;
 using JetBrains.Util;
 
-namespace LittleHelpers.ContextActions
+namespace LittleHelpers.RS9.ContextActions
 {
     [ContextAction(Description = "Switch the Visibilty enum from Visible to collapsed and the other way round",
       Group = "C#",
       Name = "VisibilitySwitcher")]
-    public sealed class VisibilitySwitcher : IContextAction
+    public sealed class VisibilitySwitcher : BulbActionBase,IContextAction
     {
         private readonly ICSharpContextActionDataProvider _provider;
         private IBulbAction[] _items;
@@ -33,7 +33,7 @@ namespace LittleHelpers.ContextActions
 
         public IEnumerable<IntentionAction> CreateBulbItems()
         {
-            return Items.ToContextAction();
+            return this.ToContextAction();
         }
 
         public bool IsAvailable(IUserDataHolder cache)
@@ -50,32 +50,7 @@ namespace LittleHelpers.ContextActions
             return false;
         }
 
-        private IBulbAction[] Items
-        {
-            get
-            {
-                if (_items == null)
-                {
-                    _items = new IBulbAction[]
-                   {
-                     new VisibilityBulbItem(_provider)
-                   };
-                }
-                return _items;
-            }
-        }
-    }
-
-    public class VisibilityBulbItem : BulbActionBase
-    {
-        private readonly ICSharpContextActionDataProvider _provider;
-
-        public VisibilityBulbItem(ICSharpContextActionDataProvider provider)
-        {
-            _provider = provider;
-        }
-
-        public override string Text
+    public override string Text
         {
             get
             {

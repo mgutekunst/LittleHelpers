@@ -11,12 +11,12 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.TextControl;
 using JetBrains.Util;
 
-namespace LittleHelpers.ContextActions
+namespace LittleHelpers.RS9.ContextActions
 {
     [ContextAction(Description = "Switches the (de)registration of an EventHandler (+= <=> -=)",
       Group = "C#",
       Name = "EventRegisteringSwitcher ")]
-    public sealed class EventRegisteringSwitcher : IContextAction
+    public sealed class EventRegisteringSwitcher : BulbActionBase, IContextAction
     {
         private readonly ICSharpContextActionDataProvider _provider;
         private IBulbAction[] _items;
@@ -33,7 +33,7 @@ namespace LittleHelpers.ContextActions
 
         public IEnumerable<IntentionAction> CreateBulbItems()
         {
-            return Items.ToContextAction();
+            return this.ToContextAction();
         }
 
         public bool IsAvailable(IUserDataHolder cache)
@@ -44,31 +44,6 @@ namespace LittleHelpers.ContextActions
                 return assignmentExpression.AssignmentType == AssignmentType.MINUSEQ || assignmentExpression.AssignmentType == AssignmentType.PLUSEQ;
             }
             return false;
-        }
-
-        private IBulbAction[] Items
-        {
-            get
-            {
-                if (_items == null)
-                {
-                    _items = new IBulbAction[]
-                   {
-                     new SwitchEventHandlerAssignmantBulbItem(_provider)
-                   };
-                }
-                return _items;
-            }
-        }
-    }
-
-    public class SwitchEventHandlerAssignmantBulbItem : BulbActionBase
-    {
-        private readonly ICSharpContextActionDataProvider _provider;
-
-        public SwitchEventHandlerAssignmantBulbItem(ICSharpContextActionDataProvider provider)
-        {
-            _provider = provider;
         }
 
         public override string Text
@@ -100,7 +75,7 @@ namespace LittleHelpers.ContextActions
                     statement = fact.CreateExpression("$0 -= $1", dest, source);
                 }
 
-                if(statement != null)
+                if (statement != null)
                     assignmentExpression.ReplaceBy(statement);
             }
 

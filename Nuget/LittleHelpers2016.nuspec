@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+  <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Little.Helpers</id>
+    <version>0.1.7</version>
+    <title>Little Helpers</title>
+    <authors>Manuel Gutekunst</authors>
+    <owners>Manuel Gutekunst</owners>
+    <projectUrl>https://github.com/mgutekunst/ReSharperPlugins</projectUrl>
+    <description>Little Helpers to improve the life with Visual Studio</description>
+    <releaseNotes>Support for RS9</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>ContextActions</tags>
+    <dependencies>
+      <dependency id="Wave" version="[2.0, 4.0)" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\LittleHelpers.RS9\bin\Release\Little*" target="DotFiles" />
+  </files>
+</package>

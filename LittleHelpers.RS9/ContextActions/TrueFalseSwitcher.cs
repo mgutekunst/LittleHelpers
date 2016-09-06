@@ -10,7 +10,7 @@ using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.TextControl;
 using JetBrains.Util;
-using JetBrains.ReSharper.Psi.CSharp.Impl.Tree;
+using JetBrains.ReSharper.Psi.IL.Parsing;
 
 namespace LittleHelpers.RS9.ContextActions
 {
@@ -35,7 +35,7 @@ namespace LittleHelpers.RS9.ContextActions
 
         public IEnumerable<IntentionAction> CreateBulbItems()
         {
-            return this.ToContextAction();
+            return this.ToContextActionIntentions();
         }
 
         public bool IsAvailable(IUserDataHolder cache)
@@ -44,7 +44,8 @@ namespace LittleHelpers.RS9.ContextActions
             if (_lit != null)
             {
                 var token = _lit.Literal.GetTokenType();
-                if (token == TokenType.TRUE_KEYWORD || token == TokenType.FALSE_KEYWORD)
+                Console.WriteLine($"Token representation is {token.TokenRepresentation}");
+                if (token.TokenRepresentation == "TRUE_KEYWORD"|| token.TokenRepresentation == "FALSE_KEYWORD")
                     return true;
             }
             return false;
@@ -69,11 +70,11 @@ namespace LittleHelpers.RS9.ContextActions
                 var factory = CSharpElementFactory.GetInstance(_provider.PsiModule);
 
                 ICSharpExpression newLit = null;
-                if (lit.Literal.GetTokenType() == TokenType.TRUE_KEYWORD)
+                if (lit.Literal.GetTokenType() == ILTokenType.TRUE_KEYWORD)
                 {
                     newLit = factory.CreateExpressionAsIs("false");
                 }
-                else if (lit.Literal.GetTokenType() == TokenType.FALSE_KEYWORD)
+                else if (lit.Literal.GetTokenType() == ILTokenType.FALSE_KEYWORD)
                 {
                     newLit = factory.CreateExpressionAsIs("true");
                 }

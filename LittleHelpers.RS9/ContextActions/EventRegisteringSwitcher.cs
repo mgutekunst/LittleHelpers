@@ -33,7 +33,8 @@ namespace LittleHelpers.RS9.ContextActions
 
         public IEnumerable<IntentionAction> CreateBulbItems()
         {
-            return this.ToContextAction();
+            return this.ToContextActionIntentions();
+//            return this.ToContextAction();
         }
 
         public bool IsAvailable(IUserDataHolder cache)

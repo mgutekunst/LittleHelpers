@@ -16,6 +16,5 @@ namespace LittleHelpers.RS9.Tests.ContextActions
     [SetUpFixture]
     public class TrueFalseSwitcherTests : ExtensionTestEnvironmentAssembly<IMyTestZone>
     {
-        
     }
 }

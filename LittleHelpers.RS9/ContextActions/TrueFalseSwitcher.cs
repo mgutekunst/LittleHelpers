@@ -11,6 +11,7 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.TextControl;
 using JetBrains.Util;
 using JetBrains.ReSharper.Psi.IL.Parsing;
+using JetBrains.ReSharper.Psi.Parsing;
 
 namespace LittleHelpers.RS9.ContextActions
 {
@@ -43,9 +44,9 @@ namespace LittleHelpers.RS9.ContextActions
             _lit = _provider.GetSelectedElement<ICSharpLiteralExpression>(true, true);
             if (_lit != null)
             {
-                var token = _lit.Literal.GetTokenType();
-                Console.WriteLine($"Token representation is {token.TokenRepresentation}");
-                if (token.TokenRepresentation == "TRUE_KEYWORD"|| token.TokenRepresentation == "FALSE_KEYWORD")
+                TokenNodeType token = _lit.Literal.GetTokenType();
+            
+                if (token.TokenRepresentation == "true"|| token.TokenRepresentation == "false")
                     return true;
             }
             return false;

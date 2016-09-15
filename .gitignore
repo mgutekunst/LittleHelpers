@@ -1,7 +1,6 @@
 obj/
 bin/
-packages/*
-#packages/*
+**/[Pp]ackages/*
 *.nupkg
 *.user
 /*.suo

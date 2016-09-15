@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleHelpers.RS9", "LittleHelpers.RS9\LittleHelpers.RS9.csproj", "{D0AFFDAE-AAAD-4C11-81E5-A75AA3FE4362}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleHelpers.RS9.Tests", "Littlehelpers.RS9.Tests\LittleHelpers.RS9.Tests.csproj", "{FBD85923-A723-45E1-8C8D-7EB361F55558}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleHelpers.RS9.Tests", "LittleHelpers.RS9.Tests\LittleHelpers.RS9.Tests.csproj", "{FBD85923-A723-45E1-8C8D-7EB361F55558}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

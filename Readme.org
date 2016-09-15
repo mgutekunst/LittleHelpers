@@ -1,6 +1,7 @@
 * Little Helpers
 ** Build status
-[![Build status](https://ci.appveyor.com/api/projects/status/pdxrj52ehl8bll56/branch/RS2016?svg=true)](https://ci.appveyor.com/project/mgutekunst61363/resharperplugins/branch/RS2016)
+#+ATTR_HTML: title="Build status"
+[[https://ci.appveyor.com/api/projects/status/pdxrj52ehl8bll56/branch/RS2016?svg=true][file:https://ci.appveyor.com/api/projects/status/pdxrj52ehl8bll56/branch/RS2016?svg=true]]
 
 ** Description
   This project contains a ReSharper plugin that hopefully simplifies the life of

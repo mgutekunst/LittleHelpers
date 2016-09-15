@@ -1,20 +1,23 @@
-﻿
-using JetBrains.Application.BuildScript.Application.Zones;
-using JetBrains.ReSharper.TestFramework;
-using JetBrains.TestFramework;
-using JetBrains.TestFramework.Application.Zones;
+﻿using JetBrains.ReSharper.FeaturesTestFramework.Intentions;
+using LittleHelpers.RS9.ContextActions;
 using NUnit.Framework;
 
-namespace LittleHelpers.RS9.Tests.ContextActions
+namespace Littlehelpers.RS9.Tests.ContextActions
 {
-
-    [ZoneDefinition]
-    public interface IMyTestZone : ITestsZone, IRequire<PsiFeatureTestZone>
+    public class TrueFalseSwitcherTests : CSharpContextActionAvailabilityTestBase<TrueFalseSwitcher>
     {
-    }
+        protected override string ExtraPath {
+            get
+            {
+                var x = nameof(TrueFalseSwitcherTests);
+                return x;
+            }
+        }
 
-    [SetUpFixture]
-    public class TrueFalseSwitcherTests : ExtensionTestEnvironmentAssembly<IMyTestZone>
-    {
+        [Test]
+        public void Availability()
+        {
+            this.DoNamedTest();
+        }
     }
 }

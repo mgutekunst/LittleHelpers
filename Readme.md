@@ -4,8 +4,15 @@ Little Helpers
 Build status
 ------------
 
+### master branch
+master is outdated currently. look at RS2016 branch
+
+### RS2016 branch
 [![Build status](https://ci.appveyor.com/api/projects/status/pdxrj52ehl8bll56/branch/RS2016?svg=true)](https://ci.appveyor.com/project/mgutekunst61363/resharperplugins/branch/RS2016)
 
+Nuget repo:
+
+<https://ci.appveyor.com/nuget/resharperplugins-nhq05f96a3ad>
 
 Description
 -----------
@@ -31,6 +38,8 @@ Install
 -------
 
 Download the .nupkg file from the releases tab. Then tell ReSharper where to find additional plugins.
+
+Alternatively you can use the custom nuget repo. Look at [Build status](#build-status) for the urls. 
 
 Bugs/ Feature Requests
 ----------------------

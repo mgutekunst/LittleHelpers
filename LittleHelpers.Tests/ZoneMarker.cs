@@ -4,7 +4,7 @@ using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.TestFramework;
 using JetBrains.TestFramework.Application.Zones;
 
-namespace Littlehelpers.RS9.Tests
+namespace LittleHelpers.Tests
 {
     [ZoneDefinition]
     public class LittleHelpersTestEnvironmentZone : ITestsZone, IRequire<PsiFeatureTestZone>

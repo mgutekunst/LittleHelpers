@@ -1,4 +1,4 @@
-﻿namespace Littlehelpers.RS9.Tests.data.Intentions.ContextActions.TrueFalseSwitcherTests
+﻿namespace LittleHelpers.Tests.data.Intentions.ContextActions.TrueFalseSwitcherTests
 {
     public class Availability
     {

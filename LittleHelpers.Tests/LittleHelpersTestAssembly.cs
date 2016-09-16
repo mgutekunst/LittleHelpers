@@ -1,5 +1,4 @@
 ﻿using JetBrains.TestFramework;
-using Littlehelpers.RS9.Tests;
 using NUnit.Framework;
 
 #pragma warning disable 618
@@ -7,7 +6,10 @@ using NUnit.Framework;
 #pragma warning restore 618
 // ReSharper disable once CheckNamespace
 
-[SetUpFixture]
-class LittleHelpersTestAssembly : ExtensionTestEnvironmentAssembly<LittleHelpersTestEnvironmentZone>
+namespace LittleHelpers.Tests
 {
+    [SetUpFixture]
+    class LittleHelpersTestAssembly : ExtensionTestEnvironmentAssembly<LittleHelpersTestEnvironmentZone>
+    {
+    }
 }

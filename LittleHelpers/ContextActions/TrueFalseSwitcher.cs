@@ -46,10 +46,20 @@ namespace LittleHelpers.ContextActions
             {
                 TokenNodeType token = _lit.Literal.GetTokenType();
             
-                if (token.TokenRepresentation == "true"|| token.TokenRepresentation == "false")
+                if (isTrueToken(token)|| isFalseToken(token))
                     return true;
             }
             return false;
+        }
+
+        private bool isFalseToken(TokenNodeType token)
+        {
+            return token.TokenRepresentation == "false";
+        }
+
+        private bool isTrueToken(TokenNodeType token)
+        {
+            return token.TokenRepresentation == "true";
         }
 
         public override string Text
@@ -71,11 +81,12 @@ namespace LittleHelpers.ContextActions
                 var factory = CSharpElementFactory.GetInstance(_provider.PsiModule);
 
                 ICSharpExpression newLit = null;
-                if (lit.Literal.GetTokenType() == ILTokenType.TRUE_KEYWORD)
+                var token = lit.Literal.GetTokenType();
+                if (isTrueToken(token))
                 {
                     newLit = factory.CreateExpressionAsIs("false");
                 }
-                else if (lit.Literal.GetTokenType() == ILTokenType.FALSE_KEYWORD)
+                else if (isFalseToken(token))
                 {
                     newLit = factory.CreateExpressionAsIs("true");
                 }

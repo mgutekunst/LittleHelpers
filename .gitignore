@@ -1,7 +1,8 @@
-obj/*
-bin/*
-packages/*
-#packages/*
+obj/
+bin/
+**/[Pp]ackages/*
 *.nupkg
 *.user
 /*.suo
+/.vs/LittleHelpers/v14/.suo
+/Readme.html

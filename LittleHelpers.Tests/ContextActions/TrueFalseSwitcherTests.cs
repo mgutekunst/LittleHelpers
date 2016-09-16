@@ -4,20 +4,29 @@ using NUnit.Framework;
 
 namespace LittleHelpers.Tests.ContextActions
 {
-    public class TrueFalseSwitcherTests : CSharpContextActionAvailabilityTestBase<TrueFalseSwitcher>
+    public class TrueFalseSwitcherTests : CSharpContextActionExecuteTestBase<TrueFalseSwitcher>
     {
-        protected override string ExtraPath {
+        protected override string ExtraPath
+        {
             get
             {
-                var x = nameof(TrueFalseSwitcherTests);
+                var x = this.GetType().Name;
                 return x;
             }
         }
 
+
         [Test]
-        public void Availability()
+        public void TrueFalseWorksOnTrue()
         {
             this.DoNamedTest();
         }
+
+        [Test]
+        public void TrueFalseWorksOnFalse()
+        {
+            this.DoNamedTest();
+        }
+
     }
 }

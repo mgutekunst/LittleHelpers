@@ -5,10 +5,7 @@ Build status
 ------------
 
 ### master branch
-master is outdated currently. look at RS2016 branch
-
-### RS2016 branch
-[![Build status](https://ci.appveyor.com/api/projects/status/pdxrj52ehl8bll56/branch/RS2016?svg=true)](https://ci.appveyor.com/project/mgutekunst61363/resharperplugins/branch/RS2016)
+[![Build status](https://ci.appveyor.com/api/projects/status/pdxrj52ehl8bll56?svg=true)](https://ci.appveyor.com/project/mgutekunst61363/resharperplugins)
 
 Nuget repo:
 

@@ -16,8 +16,8 @@
     </metadata>      
          
     <files>
-      <file src="../LittleHelpers/bin/Debug/LittleHelpers.dll" target="dotFiles\" />
-      <file src="../LittleHelpers/bin/Debug/LittleHelpers.pdb" target="dotFiles\" />
+      <file src="../LittleHelpers/bin/Release/LittleHelpers.dll" target="dotFiles\" />
+      <file src="../LittleHelpers/bin/Release/LittleHelpers.pdb" target="dotFiles\" />
     </files>
                
 </package>

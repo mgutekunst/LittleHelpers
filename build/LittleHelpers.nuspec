@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>   
+    
+    <metadata>        
+        <id>Little.Helpers</id>
+        <version>0.1.10</version>
+        <authors>Manuel Gutekunst</authors>
+        <owners>Manuel Gutekunst</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Little Helpers to improve the life with Visual Studio</description>
+                       
+        <dependencies>
+            <dependency id="Wave" version="[13.0]" />
+        </dependencies>
+                       
+    </metadata>      
+         
+    <files>
+      <file src="../LittleHelpers/bin/Debug/LittleHelpers.dll" target="dotFiles\" />
+      <file src="../LittleHelpers/bin/Debug/LittleHelpers.pdb" target="dotFiles\" />
+    </files>
+               
+</package>

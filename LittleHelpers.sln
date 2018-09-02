@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleHelpers.2018", "LittleHelpers.2018\LittleHelpers.2018.csproj", "{2B139D48-6B1A-43C6-AE90-3FF4B6F4382A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleHelpers", "LittleHelpers\LittleHelpers.csproj", "{2B139D48-6B1A-43C6-AE90-3FF4B6F4382A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleHelpers.Tests", "LittleHelpers.Tests\LittleHelpers.Tests.csproj", "{CCA462AB-40B4-4C1F-973E-DB98E66DF7EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2B139D48-6B1A-43C6-AE90-3FF4B6F4382A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B139D48-6B1A-43C6-AE90-3FF4B6F4382A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B139D48-6B1A-43C6-AE90-3FF4B6F4382A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA462AB-40B4-4C1F-973E-DB98E66DF7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA462AB-40B4-4C1F-973E-DB98E66DF7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA462AB-40B4-4C1F-973E-DB98E66DF7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA462AB-40B4-4C1F-973E-DB98E66DF7EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

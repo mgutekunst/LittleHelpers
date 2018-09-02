@@ -245,7 +245,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContextActions\TrueFalseSwitcherTests.cs" />
+    <Compile Include="ContextActions\TrueFalseSwitcherTestsAvailability.cs" />
+    <Compile Include="data\Intentions\ContextActions\TrueFalseSwitcherTests\Availability.cs" />
+    <Compile Include="data\Intentions\ContextActions\TrueFalseSwitcherTests\TrueFalseWorksOnFalse.cs" />
+    <Compile Include="data\Intentions\ContextActions\TrueFalseSwitcherTests\TrueFalseWorksOnTrue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZoneMarker.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LittleHelpers\LittleHelpers.csproj">
@@ -254,6 +260,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\Intentions\ContextActions\TrueFalseSwitcherTests\TrueFalseWorksOnFalse.cs.gold" />
+    <None Include="data\Intentions\ContextActions\TrueFalseSwitcherTests\TrueFalseWorksOnTrue.cs.gold" />
+    <None Include="data\nuget.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@
         <description>Little Helpers to improve the life with Visual Studio</description>
                        
         <dependencies>
-            <dependency id="Wave" version="[13.0]" />
+            <dependency id="Wave" version="[182.0]" />
         </dependencies>
                        
     </metadata>      
